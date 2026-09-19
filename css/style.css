@@ -305,13 +305,13 @@ a {
 
 .about-text a {
   font-weight: 600;
-  color: inherit;
+  color: var(--accent);
   transition: color 0.2s ease;
 }
 
 .about-text a:hover,
 .about-text a:focus-visible {
-  color: var(--accent);
+  text-decoration: underline;
   outline: none;
 }
 
