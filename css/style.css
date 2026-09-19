@@ -48,6 +48,7 @@
 
 html {
   scroll-behavior: smooth;
+  zoom: 0.9;
 }
 
 body {
@@ -81,8 +82,10 @@ a {
   display: grid;
   grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr);
-  min-height: 100vh;
-  max-height: 100vh;
+  /* html has zoom: 0.9, so inflate by 1/0.9 here to still fill exactly
+     100% of the real viewport after the zoom shrinks it back down. */
+  min-height: calc(100vh / 0.9);
+  max-height: calc(100vh / 0.9);
   overflow: hidden;
 }
 
