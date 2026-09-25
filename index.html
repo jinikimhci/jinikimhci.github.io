@@ -31,6 +31,15 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <nav class="top-nav" aria-label="Section navigation">
+      <div class="top-nav-inner">
+        <button type="button" class="top-nav-link" data-target="about-heading">About</button>
+        <button type="button" class="top-nav-link" data-target="news-heading">News</button>
+        <button type="button" class="top-nav-link" data-target="publications-heading">Publications</button>
+        <button type="button" class="top-nav-link" data-target="research-heading">Research</button>
+      </div>
+    </nav>
+
     <div class="page-shell">
       <aside class="left-column" aria-label="Profile sidebar">
         <header class="profile-card">
@@ -71,6 +80,11 @@
           <h2 id="publications-heading">Publications</h2>
           <div id="publications-list" class="publications-list"></div>
         </section>
+
+        <section class="content-section" aria-labelledby="research-heading">
+          <h2 id="research-heading">Research Experience</h2>
+          <div id="research-list" class="research-list"></div>
+        </section>
       </main>
     </div>
 
@@ -78,6 +92,7 @@
     <script src="js/data/social-links.js"></script>
     <script src="js/data/news.js"></script>
     <script src="js/data/publications.js"></script>
+    <script src="js/data/research.js"></script>
     <script src="js/data.js"></script>
     <script>
       const emailEntry = siteData.socialLinks.find((item) => item.icon === 'email');
@@ -152,6 +167,33 @@
         )
         .join('');
 
+      const researchList = document.getElementById('research-list');
+      researchList.innerHTML = siteData.research
+        .map((item) => {
+          const heading = item.department
+            ? `${item.institution} · ${item.department}`
+            : item.institution;
+          const roleLine = item.advisors
+            ? `${item.role} · ${item.advisors}`
+            : item.role;
+          const metaParts = [item.location, item.dateRange].filter(Boolean);
+
+          return `
+            <article class="research-entry">
+              <div class="research-logo">
+                <img src="${item.logo}" alt="${item.institution} logo" width="56" height="56" loading="eager" />
+              </div>
+              <div class="research-info">
+                <p class="research-institution">${heading}</p>
+                <p class="research-role">${roleLine}</p>
+                ${item.description ? `<p class="research-description">${item.description}</p>` : ''}
+                <p class="research-meta">${metaParts.join(' · ')}</p>
+              </div>
+            </article>
+          `;
+        })
+        .join('');
+
       function getSocialIcon(type) {
         const icons = {
           email: `
@@ -167,6 +209,42 @@
 
         return icons[type] || icons.email;
       }
+
+      // Top nav: smooth-scroll to the clicked section, whichever container
+      // actually scrolls (the whole page on mobile, or the right-column's
+      // own internal scroll box on desktop).
+      document.querySelectorAll('.top-nav-link').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const target = document.getElementById(btn.dataset.target);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // On mobile, the stacked reading order should be About > News >
+      // Publications > Research. News normally lives in the sidebar (which
+      // sits before the main content in the DOM), so on narrow screens we
+      // physically move the News panel to sit right after About. CSS alone
+      // can't do this because they start out in different parent
+      // containers. On desktop it's moved back to its original spot.
+      (function () {
+        const newsPanel = document.querySelector('.news-panel');
+        const aboutSection = document.getElementById('about-heading').parentElement;
+        const sidebarAnchor = newsPanel.previousElementSibling;
+        const mobileQuery = window.matchMedia('(max-width: 900px)');
+
+        function placeNewsForViewport(isMobile) {
+          if (isMobile) {
+            aboutSection.after(newsPanel);
+          } else {
+            sidebarAnchor.after(newsPanel);
+          }
+        }
+
+        placeNewsForViewport(mobileQuery.matches);
+        mobileQuery.addEventListener('change', (event) => placeNewsForViewport(event.matches));
+      })();
     </script>
   </body>
 </html>
