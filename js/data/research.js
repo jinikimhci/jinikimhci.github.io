@@ -29,7 +29,7 @@ const researchData = [
     role: "Visiting Researcher · Ergonomic Design & Technology Lab",
     description: "",
     location: "",
-    dateRange: "2019. 12 - 2019. 2"
+    dateRange: "2018. 12 - 2019. 2"
   },
   {
     logo: "assets/images/logos/snu-logo.webp",
