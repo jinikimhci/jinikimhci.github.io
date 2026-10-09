@@ -58,7 +58,7 @@ assets/images/profile.jpg
 Place your CV at:
 
 ```text
-assets/files/jini-kim-cv-2026.pdf
+assets/files/jini-kim-cv.pdf
 ```
 
 The site currently includes a placeholder image and a placeholder CV file so the links work immediately.
