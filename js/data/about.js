@@ -3,7 +3,7 @@ const aboutData = [
 
   "I study how AI is used in social and relational settings, where one person’s use of AI can affect other people and their relationships. Using participatory and design methods, I examine the work people do to account for these effects, particularly how they judge and adapt AI for different people, relationships, and situations.",
 
-  "Building on these insights, I design, develop, and evaluate AI interactions and sociotechnical approaches that support the thoughtful integration of AI into social and relational contexts, mitigate potential harms, and foster meaningful human connections and collaboration.",
+  "Building on these insights, I design, develop, and evaluate AI interactions and sociotechnical approaches that account for AI's impacts on others, mitigate potential harms, and support meaningful human connections and collaboration in social and relational contexts.",
 
   "My research has been published in leading venues in Human-Computer Interaction and AI, including CHI, CSCW, DIS, and AIED."
 ];
