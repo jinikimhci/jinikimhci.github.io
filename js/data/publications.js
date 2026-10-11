@@ -1,13 +1,56 @@
 // DOI links are intentionally left empty ("") below — fill them in as you get them.
+// The three "Under Review" entries below use placeholder titles built from the
+// short topic names given — swap in the real title, authors, and PDF link once
+// available.
 const publicationsData = [
+  {
+    badge: "Under Review",
+    year: "",
+    title: "The Labor of Alignment: How Peer Specialists Make AI Fit Peer-Support Practice",
+    authors: "<strong>Jini Kim*</strong>, Cindy Peng*, Qing Xiao, Naveen Raman, Hyunjin Lee, Nev Jones, Fei Fang, Jodi L. Forlizzi, and Hong Shen",
+    venue: "Under Review",
+    award: "",
+    highlight: false,
+    thumbnail: "assets/images/thumnails/P12_labor-of-alignment_4x3.webp",
+    links: [
+      { label: "PDF", url: "assets/files/publications/The_Labor_of_Alignment__How_Peer_Specialists_Make_AI_Fit_Peer_Support_Practice.pdf" }
+    ]
+  },
+  {
+    badge: "Under Review",
+    year: "",
+    title: "Enacting AI Safety in Relational Practice: Scaffolding Practical Judgment in Peer Support",
+    authors: "<strong>Jini Kim*</strong>, Cindy Peng*, Qing Xiao, Naveen Raman, Fei Fang, Jodi Forlizzi, and Hong Shen",
+    venue: "Under Review",
+    award: "",
+    highlight: false,
+    thumbnail: "assets/images/thumnails/P11_ai-safety_4x3.webp",
+    links: [
+      { label: "PDF", url: "assets/files/publications/_Open__Enacting_AI_Safety_in_Relational_Practice__Scaffolding_Practical_Judgment_in_Peer_Support.pdf" }
+    ]
+  },
+  {
+    badge: "Under Review",
+    year: "",
+    title: "Understanding How Industry Practitioners Navigate Model Adoption for Responsible Generative AI Development",
+    authors: "<strong>Jini Kim</strong>, Qiaosi Wang, Shivani Kapania, Manqing Yu, Hong Shen<sup>†</sup>, Jodi Forlizzi<sup>†</sup>",
+    venue: "Under Review",
+    award: "",
+    highlight: false,
+    thumbnail: "assets/images/thumnails/P10_genai-adoption_4x3.webp",
+    links: [
+      { label: "PDF", url: "" }
+    ]
+  },
   {
     badge: "CSCW",
     year: "2026",
     title: "Content Creation with Generative AI: How Do Content Creators Responsibly Use Generative AI Tools?",
-    authors: "<strong>Jini Kim</strong>, Manqing Yu, Jiayin Zhi, Stephanie Milani, Jingwen Cheng, Xianzhe Fan, Hong Shen*, Jodi Forlizzi*",
+    authors: "<strong>Jini Kim</strong>, Manqing Yu, Jiayin Zhi, Stephanie Milani, Jingwen Cheng, Xianzhe Fan, Hong Shen<sup>†</sup>, Jodi Forlizzi<sup>†</sup>",
     venue: "CSCW 2026",
     award: "",
     highlight: false,
+    thumbnail: "assets/images/thumnails/P9_content-creation_4x3.webp",
     links: [
       { label: "PDF", url: "https://dl.acm.org/doi/pdf/10.1145/3788080" }
     ]
@@ -20,6 +63,7 @@ const publicationsData = [
     venue: "CSCW 2026",
     award: "",
     highlight: false,
+    thumbnail: "assets/images/thumnails/P8_creator-collaboration_4x3.webp",
     links: [
       { label: "PDF", url: "assets/files/publications/cscw2026_creatorcollaboration.pdf" }
     ]
@@ -32,6 +76,7 @@ const publicationsData = [
     venue: "CHI 2026",
     award: "",
     highlight: false,
+    thumbnail: "assets/images/thumnails/P7_theory-of-mind_4x3.webp",
     links: [
       { label: "PDF", url: "https://dl.acm.org/doi/pdf/10.1145/3772318.3790936" }
     ]
@@ -44,6 +89,7 @@ const publicationsData = [
     venue: "AIED 2026",
     award: "",
     highlight: false,
+    thumbnail: "assets/images/thumnails/P6_genai-defaults-to-bias_4x3.webp",
     links: [
       { label: "PDF", url: "https://link.springer.com/chapter/10.1007/978-3-032-29763-1_7" }
     ]
@@ -56,20 +102,9 @@ const publicationsData = [
     venue: "DIS 2025 (Best Paper Honorable Mention Award)",
     award: "🎖️ Best Paper Honorable Mention Award",
     highlight: false,
+    thumbnail: "assets/images/thumnails/P5_responsible-ai-concept-selection_4x3.webp",
     links: [
       { label: "PDF", url: "https://dl.acm.org/doi/pdf/10.1145/3715336.3735745" }
-    ]
-  },
-  {
-    badge: "CHI LBW",
-    year: "2025",
-    title: "ImaginAItion: Promoting Generative AI Literacy Through Game-Based Learning",
-    authors: "Qianou Ma, Anika Jain*, <strong>Jini Kim*</strong>, Megan Chai*, Geoff Kaufman",
-    venue: "CHI 2025 (Late-Breaking Work)",
-    award: "",
-    highlight: false,
-    links: [
-      { label: "PDF", url: "https://dl.acm.org/doi/pdf/10.1145/3706599.3719844" }
     ]
   },
   {
@@ -80,6 +115,7 @@ const publicationsData = [
     venue: "CHI 2024",
     award: "",
     highlight: false,
+    thumbnail: "assets/images/thumnails/P4_creator-ai-synergy_4x3.webp",
     links: [
       { label: "PDF", url: "https://dl.acm.org/doi/pdf/10.1145/3613904.3642476" }
     ]
@@ -92,6 +128,7 @@ const publicationsData = [
     venue: "Archives of Design Research 2024 (Best Paper Honorable Mention Award)",
     award: "🎖️ Best Paper Honorable Mention Award",
     highlight: false,
+    thumbnail: "assets/images/thumnails/P3_resource-exchange_4x3.webp",
     links: [
       { label: "PDF", url: "assets/files/publications/aodr_probe_paper.pdf" }
     ]
@@ -104,32 +141,9 @@ const publicationsData = [
     venue: "CHI 2022 (Late-Breaking Work)",
     award: "",
     highlight: false,
+    thumbnail: "assets/images/thumnails/W1_thinkwrite_4x3.webp",
     links: [
       { label: "PDF", url: "https://dl.acm.org/doi/pdf/10.1145/3491101.3519644" }
-    ]
-  },
-  {
-    badge: "KSDS",
-    year: "2020",
-    title: "Service Design Strategies for Seamless EV Charging Experience",
-    authors: "<strong>Jini Kim</strong>, Jinhyun Kim, Jihyun Jang, Jiyeon Choi, Ki-Young Nam (in Collaboration with LG Electronics)",
-    venue: "KSDS 2020 International Conference",
-    award: "",
-    highlight: false,
-    links: [
-      { label: "PDF", url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE09417140" }
-    ]
-  },
-  {
-    badge: "AHFE",
-    year: "2019",
-    title: "Study of Voice-Based Crowdsourcing Platform for the Enhancement of Self-support for the Visually Impaired",
-    authors: "<strong>Jini Kim</strong>, Ga Ram Song, Ha-Yeong Kim, En-seo Kim, Wonsup Lee",
-    venue: "AHFE 2019 (Applied Human Factors & Ergonomics)",
-    award: "",
-    highlight: false,
-    links: [
-      { label: "PDF", url: "assets/files/publications/ahfe_visual_paper.pdf" }
     ]
   }
 ];
