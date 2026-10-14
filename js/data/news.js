@@ -1,5 +1,9 @@
 const newsData = [
   {
+    date: "Oct 2026",
+    text: "I will be at CSCW 2026 from October 9–14 to present our work!"
+  },
+  {
     date: "Mar 2026",
     text: "Two first-authored papers have been accepted to CSCW 2026. Stay tuned!"
   },

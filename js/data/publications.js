@@ -13,7 +13,7 @@ const publicationsData = [
     highlight: false,
     thumbnail: "assets/images/thumnails/P12_labor-of-alignment_4x3.webp",
     links: [
-      { label: "PDF", url: "assets/files/publications/The_Labor_of_Alignment__How_Peer_Specialists_Make_AI_Fit_Peer_Support_Practice.pdf" }
+      { label: "PDF", url: "assets/files/publications/manuscript_alignment.pdf" }
     ]
   },
   {
@@ -26,7 +26,7 @@ const publicationsData = [
     highlight: false,
     thumbnail: "assets/images/thumnails/P11_ai-safety_4x3.webp",
     links: [
-      { label: "PDF", url: "assets/files/publications/_Open__Enacting_AI_Safety_in_Relational_Practice__Scaffolding_Practical_Judgment_in_Peer_Support.pdf" }
+      { label: "PDF", url: "assets/files/publications/manuscript_ai-safety.pdf" }
     ]
   },
   {
