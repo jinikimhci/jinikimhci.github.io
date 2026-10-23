@@ -7,5 +7,5 @@ const aboutData = [
 
   "Building on these insights, I aim to design AI that helps people consider how their use of AI affects others, mitigate potential harms, and support people’s wellbeing and relationships.",
 
-  "My research has been published at CHI, CSCW, DIS, and AIED, with award-winning work at DIS. In my free time, I enjoy playing tennis 🎾 and reading or writing at cafés ☕️."
+  "My research has been published at leading HCI and AI venues, including CHI, CSCW, DIS, and AIED. In my free time, I enjoy playing tennis 🎾 and reading or writing at cafés ☕️."
 ];
