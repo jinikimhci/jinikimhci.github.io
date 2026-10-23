@@ -471,10 +471,12 @@ a {
 
 .publication .authors {
   font-size: 0.96rem;
+  color: var(--muted);
 }
 
 .publication .authors strong {
   font-weight: 600;
+  color: var(--text);
 }
 
 .publication .award {
