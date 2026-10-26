@@ -388,6 +388,20 @@ a {
   outline: none;
 }
 
+.term-highlight {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.3s ease;
+}
+
+.term-highlight:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
 .publications-list {
   display: flex;
   flex-direction: column;
@@ -402,6 +416,12 @@ a {
   border-radius: 0.9rem;
   padding: 1rem 1rem 0.9rem;
   background: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.publication:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 10px rgba(17, 24, 39, 0.06);
 }
 
 .publication-thumb {
