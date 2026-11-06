@@ -42,16 +42,19 @@
   </head>
   <body>
     <nav class="top-nav" aria-label="Section navigation">
-      <div class="top-nav-inner">
-        <button type="button" class="top-nav-link" data-target="about-heading">About</button>
-        <button type="button" class="top-nav-link" data-target="publications-heading">Publications</button>
-        <button type="button" class="top-nav-link" data-target="research-heading">Research</button>
+      <div class="top-nav-pill">
+        <div class="top-nav-links">
+          <button type="button" class="top-nav-link" data-target="about-heading">About</button>
+          <button type="button" class="top-nav-link" data-target="publications-heading">Publications</button>
+          <button type="button" class="top-nav-link" data-target="research-heading">Research</button>
+        </div>
+        <a class="top-nav-cv" href="assets/files/jini-kim-cv.pdf" target="_blank" rel="noopener noreferrer">CV ↗</a>
       </div>
     </nav>
 
-    <div class="page-shell">
-      <aside class="left-column" aria-label="Profile sidebar">
-        <header class="profile-card">
+    <div class="page-wrap page-columns">
+      <aside class="left-rail">
+        <div class="profile-card" aria-label="Profile">
           <div class="profile-photo">
             <img
               src="assets/images/profile-circle.webp"
@@ -67,42 +70,44 @@
           <p class="affiliation">Human-Computer Interaction Institute</p>
           <p class="affiliation">Carnegie Mellon University</p>
           <p class="email-link" id="email-link"></p>
-        </header>
 
-        <nav class="social-icons" aria-label="Professional links">
-          <div id="social-icons" class="icon-row"></div>
-        </nav>
+          <nav class="social-icons" aria-label="Professional links">
+            <div id="social-icons" class="icon-row"></div>
+          </nav>
+        </div>
 
         <section class="news-panel" aria-labelledby="news-heading">
-          <h2 id="news-heading">News</h2>
+          <h2 id="news-heading" class="eyebrow">News</h2>
           <ul id="news-list" class="news-list"></ul>
         </section>
       </aside>
 
-      <main class="right-column" aria-label="Main content">
-        <section class="content-section" aria-labelledby="about-heading">
-          <h2 id="about-heading">👋 Hi there!</h2>
+      <div class="right-rail">
+        <div class="hero-text">
+          <h2 id="about-heading" class="hero-heading">
+            👋 Hi! I'm Jini Kim —
+          </h2>
           <div id="about-text" class="about-text"></div>
-        </section>
+        </div>
 
-        <section class="content-section" aria-labelledby="publications-heading">
+        <div class="content-section" aria-labelledby="publications-heading">
           <div class="section-heading-row">
-            <h2 id="publications-heading">Selected Publications</h2>
+            <h2 id="publications-heading" class="eyebrow">Selected Publications</h2>
             <a
               class="full-publications-link"
               href="https://scholar.google.com/citations?user=Wt5tvbMAAAAJ&hl"
               target="_blank"
               rel="noopener noreferrer"
-            >Full Publications on Google Scholar →</a>
+            >Full list on Google Scholar →</a>
           </div>
           <div id="publications-list" class="publications-list"></div>
-        </section>
 
-        <section class="content-section" aria-labelledby="research-heading">
-          <h2 id="research-heading">Research Experience</h2>
-          <div id="research-list" class="research-list"></div>
-        </section>
-      </main>
+          <section class="research-section" aria-labelledby="research-heading">
+            <h2 id="research-heading">Research Experience</h2>
+            <div id="research-list" class="research-list"></div>
+          </section>
+        </div>
+      </div>
     </div>
 
     <script src="js/data/about.js"></script>
@@ -174,9 +179,9 @@
               <div class="publication-body">
                 <h3>${title}</h3>
                 <p class="authors">${pub.authors}</p>
-                ${pub.award ? `<p class="award">${pub.award}</p>` : ''}
                 <div class="publication-links">
                   <span class="venue-badge">${pub.badge} ${pub.year}</span>
+                  ${pub.award ? `<span class="award">${pub.award}</span>` : ''}
                   ${pub.links
                     .map((link) =>
                       link.url
@@ -228,18 +233,32 @@
               <path d="M3 6.75A1.75 1.75 0 0 1 4.75 5h14.5A1.75 1.75 0 0 1 21 6.75v10.5A1.75 1.75 0 0 1 19.25 19H4.75A1.75 1.75 0 0 1 3 17.25V6.75Zm2.1-.25 6.9 5.2 6.9-5.2H5.1Zm13.15 1.4-6.45 4.86a.75.75 0 0 1-.9 0L5.75 7.9v9.35c0 .14.11.25.25.25h12c.14 0 .25-.11.25-.25V7.9Z"/>
             </svg>
           `,
-          cv: `<img src="assets/images/cv-icon.webp" alt="" width="128" height="128" loading="eager" />`,
-          scholar: `<img src="assets/images/googlescholar-icon.webp" alt="" width="128" height="128" loading="eager" />`,
-          linkedin: `<img src="assets/images/linkedin-icon.webp" alt="" width="128" height="128" loading="eager" />`,
-          x: `<img src="assets/images/x-icon.webp" alt="" width="128" height="128" loading="eager" />`,
+          cv: `
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.75 2.5A1.75 1.75 0 0 0 5 4.25v15.5c0 .966.784 1.75 1.75 1.75h10.5A1.75 1.75 0 0 0 19 19.75V8.5a.75.75 0 0 0-.22-.53l-5.5-5.5a.75.75 0 0 0-.53-.22h-5.5a.75.75 0 0 0-.5-.25Zm.5 1.5h4.5v4a1.75 1.75 0 0 0 1.75 1.75h4v10a.25.25 0 0 1-.25.25H6.75a.25.25 0 0 1-.25-.25V4.25a.25.25 0 0 1 .25-.25Zm6 .56 3.44 3.44H13.5a.25.25 0 0 1-.25-.25V4.56ZM8 13.25a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Zm0 3.25a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Z"/>
+            </svg>
+          `,
+          scholar: `
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82ZM12 3 1 9l11 6 9-4.91V17h2V9L12 3Z"/>
+            </svg>
+          `,
+          linkedin: `
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.94 5.5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.5 8.75h3.38V20.5H3.5V8.75Zm6.38 0h3.24v1.6h.05c.45-.85 1.56-1.75 3.21-1.75 3.43 0 4.06 2.26 4.06 5.2V20.5h-3.38v-5.73c0-1.37-.02-3.13-1.9-3.13-1.91 0-2.2 1.5-2.2 3.03v5.83H9.88V8.75Z"/>
+            </svg>
+          `,
+          x: `
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M13.63 10.4 20.2 3h-1.56l-5.7 6.43L8.4 3H3l6.9 9.63L3 20.4h1.56l6.02-6.8 4.8 6.8H21l-7.37-10Zm-2.13 2.4-.7-.97-5.55-7.73h2.4l4.47 6.23.7.97 5.82 8.1h-2.4l-4.74-6.6Z"/>
+            </svg>
+          `,
         };
 
         return icons[type] || icons.email;
       }
 
-      // Top nav: smooth-scroll to the clicked section, whichever container
-      // actually scrolls (the whole page on mobile, or the right-column's
-      // own internal scroll box on desktop).
+      // Top nav: smooth-scroll to the clicked section.
       document.querySelectorAll('.top-nav-link').forEach((btn) => {
         btn.addEventListener('click', () => {
           const target = document.getElementById(btn.dataset.target);
@@ -249,29 +268,47 @@
         });
       });
 
-      // On mobile, the stacked reading order should be About > News >
-      // Publications > Research. News normally lives in the sidebar (which
-      // sits before the main content in the DOM), so on narrow screens we
-      // physically move the News panel to sit right after About. CSS alone
-      // can't do this because they start out in different parent
-      // containers. On desktop it's moved back to its original spot.
-      (function () {
-        const newsPanel = document.querySelector('.news-panel');
-        const aboutSection = document.getElementById('about-heading').parentElement;
-        const sidebarAnchor = newsPanel.previousElementSibling;
-        const mobileQuery = window.matchMedia('(max-width: 900px)');
+      // Keep "News" and "Selected Publications" starting on the same line:
+      // since the hero intro text and the profile card can be different
+      // heights, nudge whichever column is shorter down to match, measured
+      // live so it keeps working as either side's content changes.
+      function alignLeftRightRails() {
+        const profileCard = document.querySelector('.profile-card');
+        const heroText = document.querySelector('.hero-text');
+        const leftRail = document.querySelector('.left-rail');
+        const rightRail = document.querySelector('.right-rail');
 
-        function placeNewsForViewport(isMobile) {
-          if (isMobile) {
-            aboutSection.after(newsPanel);
-          } else {
-            sidebarAnchor.after(newsPanel);
-          }
+        profileCard.style.marginBottom = '';
+        heroText.style.marginBottom = '';
+
+        if (window.matchMedia('(max-width: 900px)').matches) return;
+
+        // Measure rendered HEIGHT via getBoundingClientRect rather than
+        // offsetHeight: offsetHeight doesn't reflect the visual size once
+        // CSS zoom is involved (profile-card and hero-text are zoomed by
+        // different nested amounts), while getBoundingClientRect does.
+        // Height (unlike top/position) is unaffected by scroll, so this
+        // stays safe to recompute at any scroll offset.
+        const leftGap = parseFloat(getComputedStyle(leftRail).rowGap) || 0;
+        const rightGap = parseFloat(getComputedStyle(rightRail).rowGap) || 0;
+        const diff = (profileCard.getBoundingClientRect().height + leftGap) -
+          (heroText.getBoundingClientRect().height + rightGap);
+
+        if (diff > 0) {
+          heroText.style.marginBottom = `${diff}px`;
+        } else if (diff < 0) {
+          profileCard.style.marginBottom = `${-diff}px`;
         }
+      }
 
-        placeNewsForViewport(mobileQuery.matches);
-        mobileQuery.addEventListener('change', (event) => placeNewsForViewport(event.matches));
-      })();
+      window.addEventListener('load', alignLeftRightRails);
+      window.addEventListener('resize', alignLeftRightRails);
+      // font-display:swap means window.load can fire before the self-hosted
+      // fonts finish swapping in, leaving the alignment computed against
+      // fallback-font metrics; re-run once the real fonts are confirmed ready.
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(alignLeftRightRails);
+      }
     </script>
   </body>
 </html>
