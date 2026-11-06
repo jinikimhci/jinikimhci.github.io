@@ -490,7 +490,7 @@ a {
 
 .publication {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: 1.1rem;
   border: 1px solid var(--border);
   border-radius: 1rem;
@@ -506,10 +506,11 @@ a {
 
 .publication-thumb {
   width: 220px;
+  aspect-ratio: 4 / 3;
   flex-shrink: 0;
   border-radius: 0.75rem;
   overflow: hidden;
-  background: #f3f4f6;
+  background: #ffffff;
 }
 
 .publication-thumb img {
@@ -522,7 +523,9 @@ a {
 .publication-body {
   flex: 1;
   min-width: 0;
-  padding-top: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .publication.highlighted {
