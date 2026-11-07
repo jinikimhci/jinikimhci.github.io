@@ -200,7 +200,8 @@ a {
   grid-template-columns: minmax(260px, 340px) minmax(0, 760px);
   column-gap: 3.2rem;
   align-items: start;
-  padding: calc(var(--nav-height) + 12px) 0 64px;
+  padding-top: calc(var(--nav-height) + 12px);
+  padding-bottom: 64px;
 }
 
 .left-rail {
@@ -710,12 +711,31 @@ a {
   .page-columns {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: calc(var(--nav-height) + 20px) 0 40px;
+    padding-top: calc(var(--nav-height) + 20px);
+    padding-bottom: 40px;
   }
 
-  .left-rail {
+  .left-rail,
+  .right-rail {
+    display: contents;
+  }
+
+  .profile-card {
+    order: 1;
     position: static;
     top: auto;
+  }
+
+  .hero-text {
+    order: 2;
+  }
+
+  .news-panel {
+    order: 3;
+  }
+
+  .content-section {
+    order: 4;
   }
 
   .publication {
